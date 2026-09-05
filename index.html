@@ -19,11 +19,11 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#0B0C10',
-                        secondary: '#1F2833',
+                        primary: '#121212',
+                        secondary: '#1E1E1E',
                         gold: '#D4AF37',
                         bronze: '#C5A059',
-                        softgray: '#C5C6C7',
+                        softgray: '#A0A0A0',
                     },
                     fontFamily: {
                         'poppins': ['Poppins', 'sans-serif'],
@@ -35,12 +35,12 @@
 
     <style>
         :root {
-            --color-primary: #0B0C10;
-            --color-secondary: #1F2833;
+            --color-primary: #121212;
+            --color-secondary: #1E1E1E;
             --color-gold: #D4AF37;
             --color-bronze: #C5A059;
             --color-white: #FFFFFF;
-            --color-softgray: #C5C6C7;
+            --color-softgray: #A0A0A0;
         }
 
         * {
@@ -74,6 +74,10 @@
             border-radius: 5px;
         }
 
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--color-bronze);
+        }
+
         /* Animations */
         @keyframes fadeInUp {
             from {
@@ -98,11 +102,23 @@
             animation: fadeInUp 0.8s ease-out forwards;
         }
 
-        /* Modern Hero Gradient - Görselsiz Lüks Temalı Karşılama */
+        /* Hero Background - GitHub'a yüklenen görsel kullanıldı */
         .hero-section {
             position: relative;
-            background: radial-gradient(circle at 50% 30%, #1a1c23 0%, #0b0c10 80%);
-            min-height: 90vh;
+            background: linear-gradient(135deg, rgba(18, 18, 18, 0.85) 0%, rgba(30, 30, 30, 0.75) 100%),
+                        url('./unnamed (1).jpg') center/cover no-repeat;
+            min-height: 100vh;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, transparent 0%, rgba(18, 18, 18, 0.6) 100%);
+            pointer-events: none;
         }
 
         /* Gradient Text */
@@ -116,22 +132,26 @@
         /* Card Hover Effects */
         .service-card {
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
 
         .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.15);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.2);
         }
 
-        /* Button Styling */
+        /* Button Hover Effects */
         .btn-gold {
             background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-bronze) 100%);
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
 
         .btn-gold:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
         }
 
         /* Navigation */
@@ -155,11 +175,15 @@
             width: 100%;
         }
 
+        .nav-link:hover {
+            color: var(--color-gold);
+        }
+
         /* Glass Effect */
         .glass {
-            background: rgba(31, 40, 51, 0.6);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(212, 175, 55, 0.15);
+            background: rgba(30, 30, 30, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.1);
         }
 
         /* Section Divider */
@@ -181,13 +205,23 @@
             transform: translateX(0);
         }
 
+        /* Feature Card */
+        .feature-card {
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: scale(1.05);
+            border-color: var(--color-gold);
+        }
+
         /* Pulse Animation */
         @keyframes pulse-gold {
             0%, 100% {
                 box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4);
             }
             50% {
-                box-shadow: 0 0 0 15px rgba(212, 175, 55, 0);
+                box-shadow: 0 0 0 20px rgba(212, 175, 55, 0);
             }
         }
 
@@ -202,9 +236,9 @@
     <nav class="fixed top-0 w-full z-50 glass" id="navbar">
         <div class="container mx-auto px-4 py-4">
             <div class="flex justify-between items-center">
-                <!-- Logo -->
+                <!-- Logo - GitHub'a yüklenen unnamed.png eklendi -->
                 <div class="flex items-center space-x-3">
-                    <img src="./unnamed.png" alt="Soner Saç Tasarım Logo" class="w-10 h-10 object-contain rounded-full border border-gold/30">
+                    <img src="./unnamed.png" alt="Soner Saç Tasarım Logo" class="w-10 h-10 object-contain rounded-full">
                     <div>
                         <h1 class="text-xl font-bold gradient-text">Soner Saç Tasarım</h1>
                     </div>
@@ -215,7 +249,9 @@
                     <a href="#home" class="nav-link text-softgray hover:text-white">Ana Sayfa</a>
                     <a href="#about" class="nav-link text-softgray hover:text-white">Hakkımızda</a>
                     <a href="#services" class="nav-link text-softgray hover:text-white">Hizmetler</a>
-                    <a href="#gallery" class="nav-link text-softgray hover:text-white">Görseller & Galeri</a>
+                    <a href="#hours" class="nav-link text-softgray hover:text-white">Çalışma Saatleri</a>
+                    <a href="#reviews" class="nav-link text-softgray hover:text-white">Yorumlar</a>
+                    <a href="#location" class="nav-link text-softgray hover:text-white">Konum</a>
                     <a href="https://wa.me/905551234567" class="btn-gold px-6 py-2 rounded-full text-primary font-semibold">
                         Randevu Al
                     </a>
@@ -232,51 +268,55 @@
     </nav>
 
     <!-- Mobile Menu -->
-    <div class="mobile-menu fixed top-0 right-0 w-64 h-full bg-secondary z-50 shadow-2xl p-6" id="mobile-menu">
-        <button class="absolute top-4 right-4 text-white" id="close-menu-btn">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-            </svg>
-        </button>
-        <div class="mt-12 space-y-6">
-            <a href="#home" class="block text-white hover:text-gold">Ana Sayfa</a>
-            <a href="#about" class="block text-white hover:text-gold">Hakkımızda</a>
-            <a href="#services" class="block text-white hover:text-gold">Hizmetler</a>
-            <a href="#gallery" class="block text-white hover:text-gold">Görseller & Galeri</a>
-            <a href="https://wa.me/905551234567" class="btn-gold block text-center px-6 py-3 rounded-full text-primary font-semibold mt-8">
-                Randevu Al
-            </a>
+    <div class="mobile-menu fixed top-0 right-0 w-64 h-full bg-secondary z-50 shadow-2xl" id="mobile-menu">
+        <div class="p-6">
+            <button class="absolute top-4 right-4 text-white" id="close-menu-btn">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            <div class="mt-12 space-y-6">
+                <a href="#home" class="block text-white hover:text-gold transition-colors">Ana Sayfa</a>
+                <a href="#about" class="block text-white hover:text-gold transition-colors">Hakkımızda</a>
+                <a href="#services" class="block text-white hover:text-gold transition-colors">Hizmetler</a>
+                <a href="#hours" class="block text-white hover:text-gold transition-colors">Çalışma Saatleri</a>
+                <a href="#reviews" class="block text-white hover:text-gold transition-colors">Yorumlar</a>
+                <a href="#location" class="block text-white hover:text-gold transition-colors">Konum</a>
+                <a href="https://wa.me/905551234567" class="btn-gold block text-center px-6 py-3 rounded-full text-primary font-semibold mt-8">
+                    Randevu Al
+                </a>
+            </div>
         </div>
     </div>
 
-    <!-- Yenilenmiş Karşılama Paneli (Hero) -->
-    <section id="home" class="hero-section flex items-center justify-center pt-24 pb-16">
-        <div class="container mx-auto px-4 text-center relative z-10 max-w-4xl">
+    <!-- Hero Section -->
+    <section id="home" class="hero-section flex items-center justify-center relative">
+        <div class="container mx-auto px-4 text-center relative z-10">
             <div class="fade-in-up">
-                <div class="inline-block px-4 py-1.5 rounded-full glass border border-gold/30 text-gold text-sm font-medium mb-6">
-                    ✨ Bornova / İzmir'in Premium Saç Tasarım Salonu
-                </div>
-                
-                <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
-                    Tarzınızı & İmajınızı <br>
-                    <span class="gradient-text">Yeniden Tanımlayın</span>
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 gradient-text">
+                    Soner Saç Tasarım
                 </h1>
-                
-                <p class="text-lg md:text-xl text-softgray mb-10 max-w-2xl mx-auto leading-relaxed">
-                    Kişiye özel stil danışmanlığı, modern kesim teknikleri ve birinci sınıf bakım hizmetleri ile ayrıcalıklı bir kuaför deneyimi yaşayın.
+                <p class="text-xl md:text-2xl text-softgray mb-4">
+                    Premium Kuaför & Saç Tasarım Salonu
                 </p>
-
+                <p class="text-2xl md:text-3xl text-white font-light mb-12">
+                    Tarzınızı ve İmajınızı Yeniden Tanımlayın
+                </p>
+                
                 <!-- CTA Buttons -->
                 <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <a href="https://wa.me/905551234567" target="_blank" class="btn-gold px-8 py-4 rounded-full text-primary font-bold text-lg flex items-center space-x-3 pulse-gold">
+                    <a href="https://wa.me/905551234567" target="_blank" class="btn-gold px-8 py-4 rounded-full text-primary font-semibold text-lg flex items-center space-x-3 pulse-gold">
                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                         </svg>
-                        <span>Hemen Randevu Al</span>
+                        <span>WhatsApp ile Randevu Al</span>
                     </a>
                     
-                    <a href="#gallery" class="px-8 py-4 rounded-full border border-gold/50 text-white font-medium text-lg hover:bg-gold/10 transition-all duration-300">
-                        Galeri & Görseller
+                    <a href="https://instagram.com/sonersactasarim" target="_blank" class="px-8 py-4 rounded-full border-2 border-gold text-white font-semibold text-lg flex items-center space-x-3 hover:bg-gold hover:text-primary transition-all duration-300">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                        <span>Instagram'da Takip Et</span>
                     </a>
                 </div>
             </div>
@@ -285,108 +325,188 @@
 
     <!-- About Section -->
     <section id="about" class="py-20 bg-primary">
-        <div class="container mx-auto px-4 max-w-6xl">
-            <div class="text-center mb-12 animate-on-scroll">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">Hakkımızda</h2>
-                <div class="section-divider"></div>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-10 items-center">
-                <div class="space-y-4 animate-on-scroll">
-                    <h3 class="text-2xl font-bold text-white">Kalite ve Şıklığın Buluşma Noktası</h3>
-                    <p class="text-softgray leading-relaxed">
-                        <span class="text-gold font-semibold">Soner Saç Tasarım</span>, Bornova İzmir'de modern kuaförlük anlayışını lüks bir atmosferle harmanlayarak sunmaktadır. Alanında deneyimli ekibimizle saç kesimi, renklendirme, sakal bakımı ve imaj danışmanlığı alanlarında hizmet vermekteyiz.
-                    </p>
-                    <p class="text-softgray leading-relaxed">
-                        Müşterilerimizin memnuniyetini esas alarak, en yeni trendleri ve kaliteli ürünleri kullanarak stilinizi ortaya çıkarıyoruz.
-                    </p>
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16 animate-on-scroll">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-4 gradient-text">Hakkımızda</h2>
+                    <div class="section-divider"></div>
+                    <p class="text-softgray text-lg mt-6">Soner Saç Tasarım Hakkında</p>
                 </div>
-                <div class="glass p-6 rounded-2xl border border-gold/20 animate-on-scroll">
-                    <ul class="space-y-4">
-                        <li class="flex items-center text-white">
-                            <span class="w-8 h-8 rounded-full bg-gold/20 text-gold flex items-center justify-center mr-3 font-bold">✓</span>
-                            Uzman ve Deneyimli Kadro
-                        </li>
-                        <li class="flex items-center text-white">
-                            <span class="w-8 h-8 rounded-full bg-gold/20 text-gold flex items-center justify-center mr-3 font-bold">✓</span>
-                            Kişiye Özel Stil Danışmanlığı
-                        </li>
-                        <li class="flex items-center text-white">
-                            <span class="w-8 h-8 rounded-full bg-gold/20 text-gold flex items-center justify-center mr-3 font-bold">✓</span>
-                            Hijyenik ve Lüks Salon Ortamı
-                        </li>
-                    </ul>
+
+                <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                    <!-- GitHub'a yüklenen unnamed (2).jpg eklendi -->
+                    <div class="animate-on-scroll">
+                        <div class="rounded-2xl overflow-hidden shadow-2xl border border-gray-800">
+                            <img src="./unnamed (2).jpg" alt="Soner Saç Tasarım Salon" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500">
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-6 animate-on-scroll">
+                        <p class="text-softgray text-lg leading-relaxed">
+                            <span class="text-gold font-semibold">Soner Saç Tasarım</span>, Bornova İzmir'in kalbinde, modern erkek ve kadın kuaförlüğünü premium bir deneyimle buluşturan lüks bir saç tasarım salonudur. Yılların tecrübesi ve tutkuyla birleşen uzmanlığımızla, saç kesimi, renklendirme, sakal tasarımı ve kişiye özel stil danışmanlığı konularında müşterilerimize en üst düzey hizmeti sunmaktayız.
+                        </p>
+                        <p class="text-softgray text-lg leading-relaxed">
+                            Her müşterimizin benzersiz olduğunu biliyor ve bu doğrultuda kişiye özel çözümler üretiyoruz. Uzman kadromuz, en son trendleri takip ederek ve premium ürünler kullanarak, tarzınızı ve imajınızı yeniden tanımlamanıza yardımcı olur. Hijyenik, konforlu ve lüks ortamımızda, kendinizi özel hissedeceğiniz bir deneyim yaşamanızı hedefliyoruz.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="feature-card glass rounded-xl p-8 text-center border border-gray-800 animate-on-scroll">
+                        <div class="w-16 h-16 bg-gradient-to-br from-gold to-bronze rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Uzman Kadro</h3>
+                        <p class="text-softgray">Alanında uzman, deneyimli ve sürekli gelişen profesyonel ekibimizle hizmetinizdeyiz.</p>
+                    </div>
+
+                    <div class="feature-card glass rounded-xl p-8 text-center border border-gray-800 animate-on-scroll">
+                        <div class="w-16 h-16 bg-gradient-to-br from-gold to-bronze rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Kişiye Özel Stil</h3>
+                        <p class="text-softgray">Her müşteri için yüz hatlarına ve yaşam tarzına uygun özel stil danışmanlığı.</p>
+                    </div>
+
+                    <div class="feature-card glass rounded-xl p-8 text-center border border-gray-800 animate-on-scroll">
+                        <div class="w-16 h-16 bg-gradient-to-br from-gold to-bronze rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Hijyenik & Lüks Ortam</h3>
+                        <p class="text-softgray">En yüksek hijyen standartlarında, konforlu ve premium bir salon deneyimi.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- YENİ: Görseller ve Galeri İçerik Alanı -->
-    <section id="gallery" class="py-20 bg-secondary">
+    <!-- Showcase Section - GitHub'a yüklenen unnamed (3).jpg eklendi -->
+    <section class="py-12 bg-primary border-t border-b border-gray-800">
         <div class="container mx-auto px-4 max-w-6xl">
-            <div class="text-center mb-16 animate-on-scroll">
-                <h2 class="text-3xl md:text-5xl font-bold mb-4 gradient-text">Görseller & Salon Galerisi</h2>
-                <div class="section-divider"></div>
-                <p class="text-softgray text-lg mt-4">Salonumuzdan ve çalışmalarımızdan kareler</p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-6">
-                <!-- Görsel 1 -->
-                <div class="glass rounded-2xl overflow-hidden border border-gold/20 hover:border-gold transition-all duration-300 group">
-                    <div class="h-64 overflow-hidden">
-                        <img src="./unnamed (1).jpg" alt="Salon Görseli 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    </div>
-                    <div class="p-4 text-center">
-                        <h4 class="font-semibold text-white">Salon Atmosferi</h4>
-                        <p class="text-sm text-softgray mt-1">Lüks & Konforlu Alan</p>
-                    </div>
-                </div>
-
-                <!-- Görsel 2 -->
-                <div class="glass rounded-2xl overflow-hidden border border-gold/20 hover:border-gold transition-all duration-300 group">
-                    <div class="h-64 overflow-hidden">
-                        <img src="./unnamed (2).jpg" alt="Salon Görseli 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    </div>
-                    <div class="p-4 text-center">
-                        <h4 class="font-semibold text-white">Çalışma Alanı</h4>
-                        <p class="text-sm text-softgray mt-1">Profesyonel Ekipmanlar</p>
-                    </div>
-                </div>
-
-                <!-- Görsel 3 -->
-                <div class="glass rounded-2xl overflow-hidden border border-gold/20 hover:border-gold transition-all duration-300 group">
-                    <div class="h-64 overflow-hidden">
-                        <img src="./unnamed (3).jpg" alt="Salon Görseli 3" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    </div>
-                    <div class="p-4 text-center">
-                        <h4 class="font-semibold text-white">Özel Tasarım Kesimler</h4>
-                        <p class="text-sm text-softgray mt-1">Modern Dokunuşlar</p>
-                    </div>
-                </div>
+            <div class="rounded-2xl overflow-hidden glass p-4">
+                <img src="./unnamed (3).jpg" alt="Soner Saç Tasarım Çalışmaları" class="w-full h-96 object-cover rounded-xl">
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-20 bg-primary">
-        <div class="container mx-auto px-4 max-w-6xl">
-            <div class="text-center mb-16 animate-on-scroll">
-                <h2 class="text-3xl md:text-5xl font-bold mb-4 gradient-text">Hizmetlerimiz</h2>
-                <div class="section-divider"></div>
-            </div>
+    <section id="services" class="py-20 bg-secondary">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16 animate-on-scroll">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-4 gradient-text">Hizmetlerimiz</h2>
+                    <div class="section-divider"></div>
+                    <p class="text-softgray text-lg mt-6">Premium saç ve bakım hizmetlerimiz</p>
+                </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="service-card glass rounded-xl p-8 border border-gray-800">
-                    <h3 class="text-xl font-bold text-white mb-2">Saç Kesim & Stil</h3>
-                    <p class="text-softgray text-sm">Yüz hatlarınıza uygun profesyonel kesim ve modern şekillendirme.</p>
-                </div>
-                <div class="service-card glass rounded-xl p-8 border border-gray-800">
-                    <h3 class="text-xl font-bold text-white mb-2">Sakal Tasarımı</h3>
-                    <p class="text-softgray text-sm">Hassas çizimler ve sakal bakım kürleri ile sakal şekillendirme.</p>
-                </div>
-                <div class="service-card glass rounded-xl p-8 border border-gray-800">
-                    <h3 class="text-xl font-bold text-white mb-2">Renklendirme & Balyaj</h3>
-                    <p class="text-softgray text-sm">Doğal görünümlü saç renklendirme ve profesyonel boya çözümleri.</p>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Service 1 -->
+                    <div class="service-card glass rounded-xl p-8 border border-gray-800 animate-on-scroll">
+                        <div class="w-14 h-14 bg-gradient-to-br from-gold to-bronze rounded-lg flex items-center justify-center mb-6">
+                            <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Saç Kesim & Stil</h3>
+                        <p class="text-softgray mb-4">Modern ve klasik tekniklerle, yüz hatlarınıza uygun profesyonel saç kesimi ve stil oluşturma.</p>
+                        <div class="flex items-center text-gold">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-sm">Uzman Stilistler</span>
+                        </div>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="service-card glass rounded-xl p-8 border border-gray-800 animate-on-scroll">
+                        <div class="w-14 h-14 bg-gradient-to-br from-gold to-bronze rounded-lg flex items-center justify-center mb-6">
+                            <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Sakal Tasarımı</h3>
+                        <p class="text-softgray mb-4">Yüz hatlarınıza uygun, profesyonel sakal şekillendirme ve bakım hizmetleri.</p>
+                        <div class="flex items-center text-gold">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-sm">Hassas Şekillendirme</span>
+                        </div>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="service-card glass rounded-xl p-8 border border-gray-800 animate-on-scroll">
+                        <div class="w-14 h-14 bg-gradient-to-br from-gold to-bronze rounded-lg flex items-center justify-center mb-6">
+                            <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Saç Renklendirme & Balyaj</h3>
+                        <p class="text-softgray mb-4">Profesyonel boya teknikleri ile doğal görünümlü renklendirme ve balyaj uygulamaları.</p>
+                        <div class="flex items-center text-gold">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-sm">Premium Boyalar</span>
+                        </div>
+                    </div>
+
+                    <!-- Service 4 -->
+                    <div class="service-card glass rounded-xl p-8 border border-gray-800 animate-on-scroll">
+                        <div class="w-14 h-14 bg-gradient-to-br from-gold to-bronze rounded-lg flex items-center justify-center mb-6">
+                            <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Keratin & Saç Bakımı</h3>
+                        <p class="text-softgray mb-4">Saçlarınıza derinlemesine bakım, keratin tedavisi ve onarıcı bakım programları.</p>
+                        <div class="flex items-center text-gold">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-sm">Doğal Formüller</span>
+                        </div>
+                    </div>
+
+                    <!-- Service 5 -->
+                    <div class="service-card glass rounded-xl p-8 border border-gray-800 animate-on-scroll">
+                        <div class="w-14 h-14 bg-gradient-to-br from-gold to-bronze rounded-lg flex items-center justify-center mb-6">
+                            <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Cilt Bakımı</h3>
+                        <p class="text-softgray mb-4">Profesyonel cilt bakımı, yüz temizliği ve rejuvenasyon tedavileri.</p>
+                        <div class="flex items-center text-gold">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-sm">Uzman Bakım</span>
+                        </div>
+                    </div>
+
+                    <!-- Service 6 -->
+                    <div class="service-card glass rounded-xl p-8 border border-gray-800 animate-on-scroll">
+                        <div class="w-14 h-14 bg-gradient-to-br from-gold to-bronze rounded-lg flex items-center justify-center mb-6">
+                            <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Stil Danışmanlığı</h3>
+                        <p class="text-softgray mb-4">Kişiye özel stil danışmanlığı ile size en uygun görünümü birlikte belirleyelim.</p>
+                        <div class="flex items-center text-gold">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-sm">Kişiye Özel</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -394,6 +514,7 @@
 
     <!-- JavaScript For Interaction -->
     <script>
+        // Mobile Menu Script
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const closeMenuBtn = document.getElementById('close-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -406,6 +527,7 @@
             mobileMenu.classList.remove('active');
         });
 
+        // Scroll Animation Observer
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
