@@ -1,1216 +1,2203 @@
- <html lang="tr">
-
+<html lang="tr">
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="description" content="Soner Saç Tasarım - Bornova İzmir'in premium kuaför ve saç tasarım salonu. Uzman kadrosu ile saç kesim, renklendirme, sakal tasarımı ve kişiye özel stil danışmanlığı.">
-
-    <title>Soner Saç Tasarım | Premium Kuaför & Saç Tasarım Salonu - Bornova/İzmir</title>
-
-    
-
-    <!-- Tailwind CSS -->
-
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    
-
-    <!-- Google Fonts -->
-
+    <title>Soner Saç Tasarım | Premium Kuaför & Saç Tasarım Salonu - İzmir Bornova</title>
+    <meta name="description" content="Soner Saç Tasarım - İzmir Bornova'da lüks, modern ve premium kuaför hizmetleri. Saç kesim, renklendirme, sakal tasarımı ve kişiye özel stil danışmanlığı.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-    
-
-    <script>
-
-        tailwind.config = {
-
-            theme: {
-
-                extend: {
-
-                    colors: {
-
-                        primary: '#121212',
-
-                        secondary: '#1E1E1E',
-
-                        gold: '#D4AF37',
-
-                        bronze: '#C5A059',
-
-                        softgray: '#A0A0A0',
-
-                    },
-
-                    fontFamily: {
-
-                        'poppins': ['Poppins', 'sans-serif'],
-
-                    }
-
-                }
-
-            }
-
-        }
-
-    </script>
-
-
-
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-
         :root {
-
-            --color-primary: #121212;
-
-            --color-secondary: #1E1E1E;
-
+            --color-black: #121212;
+            --color-dark: #1E1E1E;
+            --color-dark-lighter: #2A2A2A;
+            --color-dark-card: #252525;
             --color-gold: #D4AF37;
-
-            --color-bronze: #C5A059;
-
+            --color-gold-light: #E8C84A;
+            --color-gold-dark: #C5A059;
+            --color-gold-gradient: linear-gradient(135deg, #D4AF37 0%, #F2D06B 50%, #C5A059 100%);
             --color-white: #FFFFFF;
-
-            --color-softgray: #A0A0A0;
-
+            --color-gray-soft: #A0A0A0;
+            --color-gray-light: #CCCCCC;
+            --color-whatsapp: #25D366;
+            --color-instagram-start: #833AB4;
+            --color-instagram-mid: #FD1D1D;
+            --color-instagram-end: #F77737;
+            --font-primary: 'Poppins', sans-serif;
+            --font-display: 'Playfair Display', serif;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.3);
+            --shadow-md: 0 4px 20px rgba(0,0,0,0.4);
+            --shadow-lg: 0 8px 40px rgba(0,0,0,0.5);
+            --shadow-gold: 0 4px 20px rgba(212, 175, 55, 0.3);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --radius-xl: 30px;
+            --transition-fast: 0.2s ease;
+            --transition-normal: 0.3s ease;
+            --transition-slow: 0.5s ease;
         }
 
-
-
-        * {
-
+        *,
+        *::before,
+        *::after {
             margin: 0;
-
             padding: 0;
-
             box-sizing: border-box;
-
         }
-
-
 
         html {
-
             scroll-behavior: smooth;
-
+            scroll-padding-top: 80px;
         }
-
-
 
         body {
-
-            font-family: 'Poppins', sans-serif;
-
-            background-color: var(--color-primary);
-
+            font-family: var(--font-primary);
+            background-color: var(--color-black);
             color: var(--color-white);
-
+            line-height: 1.7;
             overflow-x: hidden;
-
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
-
-
-        /* Scrollbar Styling */
-
-        ::-webkit-scrollbar {
-
-            width: 10px;
-
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
         }
 
-
-
-        ::-webkit-scrollbar-track {
-
-            background: var(--color-primary);
-
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition-normal);
         }
 
-
-
-        ::-webkit-scrollbar-thumb {
-
-            background: var(--color-gold);
-
-            border-radius: 5px;
-
+        ul {
+            list-style: none;
         }
 
-
-
-        ::-webkit-scrollbar-thumb:hover {
-
-            background: var(--color-bronze);
-
-        }
-
-
-
-        /* Animations */
-
-        @keyframes fadeInUp {
-
-            from {
-
-                opacity: 0;
-
-                transform: translateY(30px);
-
-            }
-
-            to {
-
-                opacity: 1;
-
-                transform: translateY(0);
-
-            }
-
-        }
-
-
-
-        @keyframes fadeIn {
-
-            from {
-
-                opacity: 0;
-
-            }
-
-            to {
-
-                opacity: 1;
-
-            }
-
-        }
-
-
-
-        @keyframes slideInLeft {
-
-            from {
-
-                opacity: 0;
-
-                transform: translateX(-50px);
-
-            }
-
-            to {
-
-                opacity: 1;
-
-                transform: translateX(0);
-
-            }
-
-        }
-
-
-
-        @keyframes slideInRight {
-
-            from {
-
-                opacity: 0;
-
-                transform: translateX(50px);
-
-            }
-
-            to {
-
-                opacity: 1;
-
-                transform: translateX(0);
-
-            }
-
-        }
-
-
-
-        .fade-in-up {
-
-            animation: fadeInUp 0.8s ease-out forwards;
-
-        }
-
-
-
-        .fade-in {
-
-            animation: fadeIn 0.8s ease-out forwards;
-
-        }
-
-
-
-        .slide-in-left {
-
-            animation: slideInLeft 0.8s ease-out forwards;
-
-        }
-
-
-
-        .slide-in-right {
-
-            animation: slideInRight 0.8s ease-out forwards;
-
-        }
-
-
-
-        .animate-on-scroll {
-
-            opacity: 0;
-
-        }
-
-
-
-        .animate-on-scroll.visible {
-
-            animation: fadeInUp 0.8s ease-out forwards;
-
-        }
-
-
-
-        /* Hero Background */
-
-        .hero-section {
-
-            position: relative;
-
-            background: linear-gradient(135deg, rgba(18, 18, 18, 0.85) 0%, rgba(30, 30, 30, 0.75) 100%),
-
-                        url('https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1920&h=1080&fit=crop') center/cover no-repeat;
-
-            min-height: 100vh;
-
-        }
-
-
-
-        .hero-section::before {
-
-            content: '';
-
-            position: absolute;
-
-            top: 0;
-
-            left: 0;
-
-            right: 0;
-
-            bottom: 0;
-
-            background: radial-gradient(circle at center, transparent 0%, rgba(18, 18, 18, 0.6) 100%);
-
-            pointer-events: none;
-
-        }
-
-
-
-        /* Gradient Text */
-
-        .gradient-text {
-
-            background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-bronze) 100%);
-
-            -webkit-background-clip: text;
-
-            -webkit-text-fill-color: transparent;
-
-            background-clip: text;
-
-        }
-
-
-
-        /* Card Hover Effects */
-
-        .service-card {
-
-            transition: all 0.3s ease;
-
-            position: relative;
-
-            overflow: hidden;
-
-        }
-
-
-
-        .service-card::before {
-
-            content: '';
-
-            position: absolute;
-
-            top: 0;
-
-            left: -100%;
-
-            width: 100%;
-
-            height: 100%;
-
-            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
-
-            transition: left 0.5s ease;
-
-        }
-
-
-
-        .service-card:hover::before {
-
-            left: 100%;
-
-        }
-
-
-
-        .service-card:hover {
-
-            transform: translateY(-10px);
-
-            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.2);
-
-        }
-
-
-
-        /* Button Hover Effects */
-
-        .btn-gold {
-
-            background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-bronze) 100%);
-
-            transition: all 0.3s ease;
-
-            position: relative;
-
-            overflow: hidden;
-
-        }
-
-
-
-        .btn-gold::before {
-
-            content: '';
-
-            position: absolute;
-
-            top: 0;
-
-            left: -100%;
-
-            width: 100%;
-
-            height: 100%;
-
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-
-            transition: left 0.5s ease;
-
-        }
-
-
-
-        .btn-gold:hover::before {
-
-            left: 100%;
-
-        }
-
-
-
-        .btn-gold:hover {
-
-            transform: translateY(-2px);
-
-            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
-
-        }
-
-
-
-        /* Navigation */
-
-        .nav-link {
-
-            position: relative;
-
-            transition: color 0.3s ease;
-
-        }
-
-
-
-        .nav-link::after {
-
-            content: '';
-
-            position: absolute;
-
-            bottom: -5px;
-
-            left: 0;
-
-            width: 0;
-
-            height: 2px;
-
-            background: var(--color-gold);
-
-            transition: width 0.3s ease;
-
-        }
-
-
-
-        .nav-link:hover::after {
-
-            width: 100%;
-
-        }
-
-
-
-        .nav-link:hover {
-
-            color: var(--color-gold);
-
-        }
-
-
-
-        /* Glass Effect */
-
-        .glass {
-
-            background: rgba(30, 30, 30, 0.6);
-
-            backdrop-filter: blur(10px);
-
-            border: 1px solid rgba(212, 175, 55, 0.1);
-
-        }
-
-
-
-        /* Star Rating */
-
-        .star-filled {
-
-            color: var(--color-gold);
-
-        }
-
-
-
-        /* Section Divider */
-
-        .section-divider {
-
-            width: 80px;
-
-            height: 3px;
-
-            background: linear-gradient(90deg, var(--color-gold), var(--color-bronze));
-
+        .container {
+            max-width: 1200px;
             margin: 0 auto;
-
-            border-radius: 2px;
-
+            padding: 0 20px;
         }
 
+        .section {
+            padding: 80px 0;
+        }
 
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
 
-        /* Mobile Menu */
+        .section-header h2 {
+            font-family: var(--font-display);
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 700;
+            margin-bottom: 16px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--color-gold-gradient);
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            color: var(--color-gray-soft);
+            font-size: 1rem;
+            max-width: 600px;
+            margin: 24px auto 0;
+        }
+
+        .gold-text {
+            background: var(--color-gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 16px 0;
+            transition: var(--transition-normal);
+            background: transparent;
+        }
+
+        .navbar.scrolled {
+            background: rgba(18, 18, 18, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 10px 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.5);
+        }
+
+        .navbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--color-white);
+        }
+
+        .nav-logo i {
+            color: var(--color-gold);
+            font-size: 1.5rem;
+        }
+
+        .nav-logo span {
+            background: var(--color-gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--color-gray-soft);
+            position: relative;
+            padding: 4px 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--color-gold);
+            transition: var(--transition-normal);
+        }
+
+        .nav-links a:hover {
+            color: var(--color-gold);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: var(--color-gold-gradient) !important;
+            color: var(--color-black) !important;
+            padding: 8px 20px !important;
+            border-radius: var(--radius-xl) !important;
+            font-weight: 600 !important;
+            -webkit-text-fill-color: var(--color-black) !important;
+        }
+
+        .nav-cta::after {
+            display: none !important;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--color-white);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 1001;
+        }
 
         .mobile-menu {
-
-            transform: translateX(100%);
-
-            transition: transform 0.3s ease;
-
+            display: none;
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 280px;
+            height: 100vh;
+            background: var(--color-dark);
+            z-index: 1002;
+            padding: 80px 30px 30px;
+            transition: var(--transition-normal);
+            box-shadow: var(--shadow-lg);
         }
-
-
 
         .mobile-menu.active {
-
-            transform: translateX(0);
-
+            right: 0;
         }
 
+        .mobile-menu-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 1001;
+            opacity: 0;
+            transition: var(--transition-normal);
+        }
 
+        .mobile-menu-overlay.active {
+            opacity: 1;
+        }
 
-        /* Review Card */
+        .mobile-menu-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: var(--color-white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .mobile-menu a {
+            display: block;
+            padding: 14px 0;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--color-gray-light);
+            border-bottom: 1px solid var(--color-dark-lighter);
+        }
+
+        .mobile-menu a:hover {
+            color: var(--color-gold);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: var(--color-black);
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .hero-bg-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.35;
+        }
+
+        .hero-bg-gradient {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                180deg,
+                rgba(18, 18, 18, 0.4) 0%,
+                rgba(18, 18, 18, 0.6) 50%,
+                rgba(18, 18, 18, 1) 100%
+            );
+        }
+
+        .hero-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 2;
+        }
+
+        .particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: var(--color-gold);
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: floatParticle linear infinite;
+        }
+
+        @keyframes floatParticle {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.4;
+            }
+            90% {
+                opacity: 0.4;
+            }
+            100% {
+                transform: translateY(-10vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            max-width: 900px;
+            padding: 0 20px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(212, 175, 55, 0.15);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 8px 20px;
+            border-radius: var(--radius-xl);
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--color-gold);
+            margin-bottom: 24px;
+            animation: fadeInDown 0.8s ease forwards;
+            opacity: 0;
+        }
+
+        .hero-badge i {
+            font-size: 0.75rem;
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 7vw, 5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            animation: fadeInUp 0.8s ease 0.2s forwards;
+            opacity: 0;
+        }
+
+        .hero-slogan {
+            font-size: clamp(1rem, 2.5vw, 1.35rem);
+            font-weight: 300;
+            color: var(--color-gray-soft);
+            margin-bottom: 16px;
+            letter-spacing: 2px;
+            animation: fadeInUp 0.8s ease 0.4s forwards;
+            opacity: 0;
+        }
+
+        .hero-divider {
+            width: 80px;
+            height: 2px;
+            background: var(--color-gold-gradient);
+            margin: 24px auto;
+            animation: fadeInUp 0.8s ease 0.5s forwards;
+            opacity: 0;
+        }
+
+        .hero-description {
+            font-size: 1.05rem;
+            color: var(--color-gray-soft);
+            max-width: 600px;
+            margin: 0 auto 40px;
+            animation: fadeInUp 0.8s ease 0.6s forwards;
+            opacity: 0;
+        }
+
+        .hero-buttons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease 0.8s forwards;
+            opacity: 0;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 32px;
+            border-radius: var(--radius-xl);
+            font-family: var(--font-primary);
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255,255,255,0.15);
+            border-radius: 50%;
+            transition: width 0.6s ease, height 0.6s ease;
+            transform: translate(-50%, -50%);
+        }
+
+        .btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-whatsapp {
+            background: var(--color-whatsapp);
+            color: var(--color-white);
+        }
+
+        .btn-whatsapp:hover {
+            background: #20ba5a;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.35);
+        }
+
+        .btn-instagram {
+            background: linear-gradient(135deg, var(--color-instagram-start), var(--color-instagram-mid), var(--color-instagram-end));
+            color: var(--color-white);
+        }
+
+        .btn-instagram:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(131, 58, 180, 0.35);
+        }
+
+        .btn-gold {
+            background: var(--color-gold-gradient);
+            color: var(--color-black);
+            font-weight: 700;
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--color-gold);
+            border: 2px solid var(--color-gold);
+        }
+
+        .btn-outline:hover {
+            background: var(--color-gold);
+            color: var(--color-black);
+            transform: translateY(-3px);
+        }
+
+        .btn i {
+            font-size: 1.1rem;
+        }
+
+        .hero-scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            animation: bounce 2s infinite;
+        }
+
+        .hero-scroll-indicator a {
+            color: var(--color-gold);
+            font-size: 1.5rem;
+            opacity: 0.6;
+        }
+
+        .hero-scroll-indicator a:hover {
+            opacity: 1;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* ABOUT SECTION */
+        .about {
+            background: var(--color-dark);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-image-wrapper {
+            position: relative;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .about-image-accent {
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 120px;
+            height: 120px;
+            border: 3px solid var(--color-gold);
+            border-radius: var(--radius-lg);
+            opacity: 0.4;
+            z-index: -1;
+        }
+
+        .about-image-badge {
+            position: absolute;
+            bottom: -20px;
+            right: -10px;
+            background: var(--color-gold-gradient);
+            color: var(--color-black);
+            padding: 20px;
+            border-radius: var(--radius-md);
+            text-align: center;
+            box-shadow: var(--shadow-gold);
+        }
+
+        .about-image-badge .number {
+            font-size: 2rem;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .about-image-badge .label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .about-text h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--color-gold);
+        }
+
+        .about-text p {
+            color: var(--color-gray-soft);
+            margin-bottom: 16px;
+            font-size: 0.95rem;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 30px;
+        }
+
+        .about-feature {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            background: var(--color-dark-lighter);
+            border-radius: var(--radius-sm);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            transition: var(--transition-normal);
+        }
+
+        .about-feature:hover {
+            border-color: rgba(212, 175, 55, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .about-feature i {
+            color: var(--color-gold);
+            font-size: 1.1rem;
+        }
+
+        .about-feature span {
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* SERVICES SECTION */
+        .services {
+            background: var(--color-black);
+            position: relative;
+        }
+
+        .services::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at center, rgba(212, 175, 55, 0.03) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-card {
+            background: var(--color-dark-card);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: var(--radius-lg);
+            padding: 36px 28px;
+            text-align: center;
+            transition: var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--color-gold-gradient);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(212, 175, 55, 0.15);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 20px;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            color: var(--color-gold);
+            transition: var(--transition-normal);
+        }
+
+        .service-card:hover .service-icon {
+            background: var(--color-gold-gradient);
+            color: var(--color-black);
+            transform: scale(1.1);
+        }
+
+        .service-card h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            color: var(--color-gray-soft);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .service-price {
+            display: inline-block;
+            margin-top: 16px;
+            padding: 6px 16px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: var(--radius-xl);
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--color-gold);
+        }
+
+        /* HOURS SECTION */
+        .hours {
+            background: var(--color-dark);
+        }
+
+        .hours-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hours-info h3 {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            margin-bottom: 16px;
+        }
+
+        .hours-info p {
+            color: var(--color-gray-soft);
+            margin-bottom: 24px;
+            font-size: 0.95rem;
+        }
+
+        .hours-note {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 20px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: var(--radius-md);
+        }
+
+        .hours-note i {
+            color: var(--color-gold);
+            font-size: 1.2rem;
+        }
+
+        .hours-note span {
+            font-size: 0.9rem;
+            color: var(--color-gray-light);
+        }
+
+        .hours-table {
+            background: var(--color-dark-card);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .hours-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 24px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            transition: var(--transition-fast);
+        }
+
+        .hours-row:last-child {
+            border-bottom: none;
+        }
+
+        .hours-row:hover {
+            background: rgba(212, 175, 55, 0.05);
+        }
+
+        .hours-row.today {
+            background: rgba(212, 175, 55, 0.1);
+            border-left: 3px solid var(--color-gold);
+        }
+
+        .hours-day {
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .hours-time {
+            color: var(--color-gray-soft);
+            font-size: 0.9rem;
+        }
+
+        .hours-time.closed {
+            color: #e74c3c;
+            font-weight: 500;
+        }
+
+        .hours-time.open {
+            color: var(--color-gold);
+        }
+
+        .today-badge {
+            display: inline-block;
+            background: var(--color-gold-gradient);
+            color: var(--color-black);
+            font-size: 0.65rem;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: var(--radius-xl);
+            margin-left: 8px;
+            text-transform: uppercase;
+        }
+
+        /* REVIEWS SECTION */
+        .reviews {
+            background: var(--color-black);
+            position: relative;
+        }
+
+        .reviews::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .google-rating-card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            background: var(--color-dark-card);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            border-radius: var(--radius-lg);
+            padding: 30px 40px;
+            margin-bottom: 48px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            flex-wrap: wrap;
+        }
+
+        .google-logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .google-logo-text {
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .google-logo-text .g-blue { color: #4285F4; }
+        .google-logo-text .g-red { color: #EA4335; }
+        .google-logo-text .g-yellow { color: #FBBC05; }
+        .google-logo-text .g-green { color: #34A853; }
+
+        .google-rating-number {
+            font-size: 3rem;
+            font-weight: 800;
+            background: var(--color-gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+        }
+
+        .google-rating-details {
+            text-align: left;
+        }
+
+        .google-stars {
+            color: var(--color-gold);
+            font-size: 1.2rem;
+            margin-bottom: 4px;
+        }
+
+        .google-stars .far {
+            color: var(--color-gray-soft);
+        }
+
+        .google-reviews-count {
+            font-size: 0.85rem;
+            color: var(--color-gray-soft);
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
 
         .review-card {
-
-            transition: all 0.3s ease;
-
+            background: var(--color-dark-card);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: var(--radius-lg);
+            padding: 28px;
+            transition: var(--transition-normal);
+            position: relative;
         }
-
-
 
         .review-card:hover {
-
-            transform: translateY(-5px);
-
-            border-color: var(--color-gold);
-
+            transform: translateY(-4px);
+            border-color: rgba(212, 175, 55, 0.2);
+            box-shadow: var(--shadow-md);
         }
 
-
-
-        /* Feature Card */
-
-        .feature-card {
-
-            transition: all 0.3s ease;
-
+        .review-card .quote-icon {
+            position: absolute;
+            top: 16px;
+            right: 20px;
+            font-size: 2rem;
+            color: rgba(212, 175, 55, 0.1);
         }
 
-
-
-        .feature-card:hover {
-
-            transform: scale(1.05);
-
-            border-color: var(--color-gold);
-
+        .review-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 16px;
         }
 
-
-
-        /* Pulse Animation */
-
-        @keyframes pulse-gold {
-
-            0%, 100% {
-
-                box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4);
-
-            }
-
-            50% {
-
-                box-shadow: 0 0 0 20px rgba(212, 175, 55, 0);
-
-            }
-
+        .review-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--color-gold-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--color-black);
+            font-size: 1.1rem;
         }
 
-
-
-        .pulse-gold {
-
-            animation: pulse-gold 2s infinite;
-
+        .review-author h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
         }
 
+        .review-author .review-date {
+            font-size: 0.8rem;
+            color: var(--color-gray-soft);
+        }
 
+        .review-stars {
+            color: var(--color-gold);
+            font-size: 0.85rem;
+            margin-bottom: 12px;
+        }
 
-        /* Floating WhatsApp Button */
+        .review-text {
+            color: var(--color-gray-soft);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
 
-        .floating-whatsapp {
+        .reviews-cta {
+            text-align: center;
+        }
 
+        /* LOCATION SECTION */
+        .location {
+            background: var(--color-dark);
+        }
+
+        .location-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .location-info h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--color-gold);
+        }
+
+        .location-address {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            margin-bottom: 24px;
+            padding: 20px;
+            background: var(--color-dark-card);
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .location-address i {
+            color: var(--color-gold);
+            font-size: 1.3rem;
+            margin-top: 3px;
+        }
+
+        .location-address-text h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .location-address-text p {
+            color: var(--color-gray-soft);
+            font-size: 0.9rem;
+        }
+
+        .location-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 16px;
+        }
+
+        .location-contact-item i {
+            color: var(--color-gold);
+            width: 20px;
+            text-align: center;
+        }
+
+        .location-contact-item a {
+            color: var(--color-gray-light);
+            font-size: 0.9rem;
+        }
+
+        .location-contact-item a:hover {
+            color: var(--color-gold);
+        }
+
+        .location-buttons {
+            display: flex;
+            gap: 12px;
+            margin-top: 24px;
+            flex-wrap: wrap;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 400px;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.05);
+            position: relative;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .map-overlay {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+
+        /* FOOTER */
+        .footer {
+            background: var(--color-dark);
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding: 60px 0 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+        }
+
+        .footer-brand p {
+            color: var(--color-gray-soft);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            max-width: 300px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+        }
+
+        .footer-social a {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: var(--color-dark-lighter);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-gray-soft);
+            font-size: 1rem;
+            transition: var(--transition-normal);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .footer-social a:hover {
+            background: var(--color-gold);
+            color: var(--color-black);
+            transform: translateY(-3px);
+        }
+
+        .footer-social a.instagram:hover {
+            background: linear-gradient(135deg, var(--color-instagram-start), var(--color-instagram-mid), var(--color-instagram-end));
+            color: white;
+        }
+
+        .footer-social a.whatsapp:hover {
+            background: var(--color-whatsapp);
+            color: white;
+        }
+
+        .footer-col h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--color-white);
+        }
+
+        .footer-col a {
+            display: block;
+            color: var(--color-gray-soft);
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+            transition: var(--transition-fast);
+        }
+
+        .footer-col a:hover {
+            color: var(--color-gold);
+            padding-left: 6px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .footer-bottom p {
+            color: var(--color-gray-soft);
+            font-size: 0.85rem;
+        }
+
+        .footer-bottom a {
+            color: var(--color-gold);
+        }
+
+        /* SCROLL REVEAL ANIMATIONS */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* BACK TO TOP */
+        .back-to-top {
             position: fixed;
-
             bottom: 30px;
-
             right: 30px;
-
+            width: 48px;
+            height: 48px;
+            background: var(--color-gold-gradient);
+            color: var(--color-black);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition-normal);
             z-index: 999;
-
-            animation: pulse-gold 2s infinite;
-
+            border: none;
+            box-shadow: var(--shadow-gold);
         }
 
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-4px);
+        }
+
+        /* WHATSAPP FLOAT */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            z-index: 999;
+        }
+
+        .whatsapp-float a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 56px;
+            height: 56px;
+            background: var(--color-whatsapp);
+            color: white;
+            border-radius: 50%;
+            font-size: 1.6rem;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            transition: var(--transition-normal);
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float a:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .about-image {
+                height: 400px;
+            }
+
+            .about-image-wrapper {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+
+            .hours-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .location-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .section-header {
+                margin-bottom: 40px;
+            }
+
+            .hero-title {
+                font-size: clamp(2rem, 8vw, 3rem);
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .hero-buttons .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .about-features {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .google-rating-card {
+                flex-direction: column;
+                text-align: center;
+                padding: 24px;
+            }
+
+            .google-rating-details {
+                text-align: center;
+            }
+
+            .map-container {
+                height: 300px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .whatsapp-float {
+                bottom: 20px;
+                left: 20px;
+            }
+
+            .whatsapp-float a {
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 42px;
+                height: 42px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                min-height: 100svh;
+            }
+
+            .container {
+                padding: 0 16px;
+            }
+
+            .service-card {
+                padding: 28px 20px;
+            }
+
+            .location-buttons {
+                flex-direction: column;
+            }
+
+            .location-buttons .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        /* Loading Screen */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--color-black);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .loading-screen.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loading-logo {
+            text-align: center;
+        }
+
+        .loading-logo i {
+            font-size: 3rem;
+            color: var(--color-gold);
+            animation: pulseGold 1.5s ease infinite;
+        }
+
+        .loading-logo p {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            color: var(--color-gold);
+            margin-top: 12px;
+        }
+
+        .loading-bar {
+            width: 120px;
+            height: 2px;
+            background: var(--color-dark-lighter);
+            margin: 16px auto 0;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .loading-bar-inner {
+            width: 0%;
+            height: 100%;
+            background: var(--color-gold-gradient);
+            animation: loadingBar 1.5s ease forwards;
+        }
+
+        @keyframes pulseGold {
+            0%, 100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.6;
+                transform: scale(0.95);
+            }
+        }
+
+        @keyframes loadingBar {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
     </style>
-
 </head>
-
-<body class="font-poppins">
-
-
-
-    <!-- Navigation -->
-
-    <nav class="fixed top-0 w-full z-50 glass" id="navbar">
-
-        <div class="container mx-auto px-4 py-4">
-
-            <div class="flex justify-between items-center">
-
-                <!-- Logo -->
-
-                <div class="flex items-center space-x-2">
-
-                    <div class="w-10 h-10 bg-gradient-to-br from-gold to-bronze rounded-full flex items-center justify-center">
-
-                        <span class="text-primary font-bold text-lg">S</span>
-
-                    </div>
-
-                    <div>
-
-                        <h1 class="text-xl font-bold gradient-text">Soner Saç Tasarım</h1>
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- Desktop Menu -->
-
-                <div class="hidden md:flex items-center space-x-8">
-
-                    <a href="#home" class="nav-link text-softgray hover:text-white">Ana Sayfa</a>
-
-                    <a href="#about" class="nav-link text-softgray hover:text-white">Hakkımızda</a>
-
-                    <a href="#services" class="nav-link text-softgray hover:text-white">Hizmetler</a>
-
-                    <a href="#hours" class="nav-link text-softgray hover:text-white">Çalışma Saatleri</a>
-
-                    <a href="#reviews" class="nav-link text-softgray hover:text-white">Yorumlar</a>
-
-                    <a href="#location" class="nav-link text-softgray hover:text-white">Konum</a>
-
-                    <a href="https://wa.me/905551234567" class="btn-gold px-6 py-2 rounded-full text-primary font-semibold">
-
-                        Randevu Al
-
-                    </a>
-
-                </div>
-
-
-
-                <!-- Mobile Menu Button -->
-
-                <button class="md:hidden text-white focus:outline-none" id="mobile-menu-btn">
-
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-
-                    </svg>
-
-                </button>
-
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-logo">
+            <i class="fas fa-cut"></i>
+            <p>Soner Saç Tasarım</p>
+            <div class="loading-bar">
+                <div class="loading-bar-inner"></div>
             </div>
-
         </div>
-
-    </nav>
-
-
-
-    <!-- Mobile Menu -->
-
-    <div class="mobile-menu fixed top-0 right-0 w-64 h-full bg-secondary z-50 shadow-2xl" id="mobile-menu">
-
-        <div class="p-6">
-
-            <button class="absolute top-4 right-4 text-white" id="close-menu-btn">
-
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-
-                </svg>
-
-            </button>
-
-            <div class="mt-12 space-y-6">
-
-                <a href="#home" class="block text-white hover:text-gold transition-colors">Ana Sayfa</a>
-
-                <a href="#about" class="block text-white hover:text-gold transition-colors">Hakkımızda</a>
-
-                <a href="#services" class="block text-white hover:text-gold transition-colors">Hizmetler</a>
-
-                <a href="#hours" class="block text-white hover:text-gold transition-colors">Çalışma Saatleri</a>
-
-                <a href="#reviews" class="block text-white hover:text-gold transition-colors">Yorumlar</a>
-
-                <a href="#location" class="block text-white hover:text-gold transition-colors">Konum</a>
-
-                <a href="https://wa.me/905551234567" class="btn-gold block text-center px-6 py-3 rounded-full text-primary font-semibold mt-8">
-
-                    Randevu Al
-
-                </a>
-
-            </div>
-
-        </div>
-
     </div>
 
-
-
-    <!-- Hero Section -->
-
-    <section id="home" class="hero-section flex items-center justify-center relative">
-
-        <div class="container mx-auto px-4 text-center relative z-10">
-
-            <div class="fade-in-up">
-
-                <h1 class="text-5xl md:text-7xl font-bold mb-6 gradient-text">
-
-                    Soner Saç Tasarım
-
-                </h1>
-
-                <p class="text-xl md:text-2xl text-softgray mb-4">
-
-                    Premium Kuaför & Saç Tasarım Salonu
-
-                </p>
-
-                <p class="text-2xl md:text-3xl text-white font-light mb-12">
-
-                    Tarzınızı ve İmajınızı Yeniden Tanımlayın
-
-                </p>
-
-                
-
-                <!-- CTA Buttons -->
-
-                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-
-                    <a href="https://wa.me/905551234567" target="_blank" class="btn-gold px-8 py-4 rounded-full text-primary font-semibold text-lg flex items-center space-x-3 pulse-gold">
-
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-
-                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-
-                        </svg>
-
-                        <span>WhatsApp ile Randevu Al</span>
-
-                    </a>
-
-                    
-
-                    <a href="https://instagram.com/sonersactasarim" target="_blank" class="px-8 py-4 rounded-full border-2 border-gold text-white font-semibold text-lg flex items-center space-x-3 hover:bg-gold hover:text-primary transition-all duration-300">
-
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-
-                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-
-                        </svg>
-
-                        <span>Instagram'da Takip Et</span>
-
-                    </a>
-
-                </div>
-
-
-
-                <!-- Scroll Indicator -->
-
-                <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-
-                    <svg class="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-
-                    </svg>
-
-                </div>
-
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#" class="nav-logo">
+                <i class="fas fa-cut"></i>
+                <span>Soner Saç Tasarım</span>
+            </a>
+            <div class="nav-links">
+                <a href="#hakkimizda">Hakkımızda</a>
+                <a href="#hizmetler">Hizmetler</a>
+                <a href="#calisma-saatleri">Saatler</a>
+                <a href="#yorumlar">Yorumlar</a>
+                <a href="#konum">Konum</a>
+                <a href="https://wa.me/905XXXXXXXXX" target="_blank" rel="noopener" class="nav-cta">
+                    <i class="fab fa-whatsapp"></i> Randevu Al
+                </a>
             </div>
-
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menüyü Aç">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
+    </nav>
 
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileOverlay"></div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Menüyü Kapat">
+            <i class="fas fa-times"></i>
+        </button>
+        <a href="#hakkimizda" class="mobile-link">Hakkımızda</a>
+        <a href="#hizmetler" class="mobile-link">Hizmetler</a>
+        <a href="#calisma-saatleri" class="mobile-link">Saatler</a>
+        <a href="#yorumlar" class="mobile-link">Yorumlar</a>
+        <a href="#konum" class="mobile-link">Konum</a>
+        <a href="https://wa.me/905XXXXXXXXX" target="_blank" rel="noopener" class="mobile-link" style="color: var(--color-whatsapp);">
+            <i class="fab fa-whatsapp"></i> WhatsApp Randevu
+        </a>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=1920&q=80" 
+                 alt="Premium Kuaför Salonu" 
+                 class="hero-bg-image"
+                 loading="eager">
+            <div class="hero-bg-gradient"></div>
+        </div>
+        <div class="hero-particles" id="particles"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-star"></i>
+                Bornova'nın Premium Kuaför Salonu
+            </div>
+            <h1 class="hero-title">
+                <span class="gold-text">Soner Saç</span><br>Tasarım
+            </h1>
+            <p class="hero-slogan">TARZINIZ VE İMAJINIZI YENİDEN TANIMLAYIN</p>
+            <div class="hero-divider"></div>
+            <p class="hero-description">
+                Uzman kadromuz ile kişiye özel saç tasarımı, renklendirme, sakal bakımı ve premium stil danışmanlığı hizmetleri.
+            </p>
+            <div class="hero-buttons">
+                <a href="https://wa.me/905XXXXXXXXX" target="_blank" rel="noopener" class="btn btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                    WhatsApp ile Randevu Al
+                </a>
+                <a href="https://www.instagram.com/sonersactasarm/" target="_blank" rel="noopener" class="btn btn-instagram">
+                    <i class="fab fa-instagram"></i>
+                    Instagram'da Takip Edin
+                </a>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <a href="#hakkimizda">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
     </section>
 
-
-
-    <!-- About Section -->
-
-    <section id="about" class="py-20 bg-primary">
-
-        <div class="container mx-auto px-4">
-
-            <div class="max-w-6xl mx-auto">
-
-                <!-- Section Header -->
-
-                <div class="text-center mb-16 animate-on-scroll">
-
-                    <h2 class="text-4xl md:text-5xl font-bold mb-4 gradient-text">Hakkımızda</h2>
-
-                    <div class="section-divider"></div>
-
-                    <p class="text-softgray text-lg mt-6">Soner Saç Tasarım Hakkında</p>
-
-                </div>
-
-
-
-                <!-- About Content -->
-
-                <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
-
-                    <div class="animate-on-scroll">
-
-                        <div class="rounded-2xl overflow-hidden shadow-2xl">
-
-                            <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=800&h=600&fit=crop" alt="Soner Saç Tasarım Salon" class="w-full h-full object-cover">
-
-                        </div>
-
-                    </div>
-
-                    
-
-                    <div class="space-y-6 animate-on-scroll">
-
-                        <p class="text-softgray text-lg leading-relaxed">
-
-                            <span class="text-gold font-semibold">Soner Saç Tasarım</span>, Bornova İzmir'in kalbinde, modern erkek ve kadın kuaförlüğünü premium bir deneyimle buluşturan lüks bir saç tasarım salonudur. Yılların tecrübesi ve tutkuyla birleşen uzmanlığımızla, saç kesimi, renklendirme, sakal tasarımı ve kişiye özel stil danışmanlığı konularında müşterilerimize en üst düzey hizmeti sunmaktayız.
-
-                        </p>
-
-                        <p class="text-softgray text-lg leading-relaxed">
-
-                            Her müşterimizin benzersiz olduğunu biliyor ve bu doğrultuda kişiye özel çözümler üretiyoruz. Uzman kadromuz, en son trendleri takip ederek ve premium ürünler kullanarak, tarzınızı ve imajınızı yeniden tanımlamanıza yardımcı olur. Hijyenik, konforlu ve lüks ortamımızda, kendinizi özel hissedeceğiniz bir deneyim yaşamanızı hedefliyoruz.
-
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- Feature Cards -->
-
-                <div class="grid md:grid-cols-3 gap-8">
-
-                    <div class="feature-card glass rounded-xl p-8 text-center border border-gray-800 animate-on-scroll">
-
-                        <div class="w-16 h-16 bg-gradient-to-br from-gold to-bronze rounded-full flex items-center justify-center mx-auto mb-4">
-
-                            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-
-                            </svg>
-
-                        </div>
-
-                        <h3 class="text-xl font-bold text-white mb-2">Uzman Kadro</h3>
-
-                        <p class="text-softgray">Alanında uzman, deneyimli ve sürekli gelişen profesyonel ekibimizle hizmetinizdeyiz.</p>
-
-                    </div>
-
-
-
-                    <div class="feature-card glass rounded-xl p-8 text-center border border-gray-800 animate-on-scroll">
-
-                        <div class="w-16 h-16 bg-gradient-to-br from-gold to-bronze rounded-full flex items-center justify-center mx-auto mb-4">
-
-                            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
-
-                            </svg>
-
-                        </div>
-
-                        <h3 class="text-xl font-bold text-white mb-2">Kişiye Özel Stil</h3>
-
-                        <p class="text-softgray">Her müşteri için yüz hatlarına ve yaşam tarzına uygun özel stil danışmanlığı.</p>
-
-                    </div>
-
-
-
-                    <div class="feature-card glass rounded-xl p-8 text-center border border-gray-800 animate-on-scroll">
-
-                        <div class="w-16 h-16 bg-gradient-to-br from-gold to-bronze rounded-full flex items-center justify-center mx-auto mb-4">
-
-                            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-
-                            </svg>
-
-                        </div>
-
-                        <h3 class="text-xl font-bold text-white mb-2">Hijyenik & Lüks Ortam</h3>
-
-                        <p class="text-softgray">En yüksek hijyen standartlarında, konforlu ve premium bir salon deneyimi.</p>
-
-                    </div>
-
-                </div>
-
+    <!-- ABOUT SECTION -->
+    <section class="about section" id="hakkimizda">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Hakkımızda</h2>
+                <p>Soner Saç Tasarım hikayesi ve misyonu</p>
             </div>
-
+            <div class="about-content">
+                <div class="about-image-wrapper reveal">
+                    <div class="about-image-accent"></div>
+                    <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=600&q=80" 
+                         alt="Soner Saç Tasarım Salonu" 
+                         class="about-image">
+                    <div class="about-image-badge">
+                        <div class="number">15+</div>
+                        <div class="label">Yıl Deneyim</div>
+                    </div>
+                </div>
+                <div class="about-text reveal">
+                    <h3>Soner Saç Tasarım Hakkında</h3>
+                    <p>
+                        Bornova'da yıllardır hizmet veren Soner Saç Tasarım, saç tasarımında mükemmelliği arayanların buluşma noktasıdır. Deneyimli ve alanında uzman kadromuz, en son trendleri klasik ustalıkla birleştirerek size özel tasarımlar ortaya çıkarmaktadır. Her müşterimizin yüz şekline, yaşam tarzına ve kişisel tercihlerine uygun, benzersiz stiller yaratmak bizim tutkumuzdur.
+                    </p>
+                    <p>
+                        Saç renklendirme, balyaj, keratin bakımı, sakal tasarımından cilt bakımına kadar geniş bir hizmet yelpazesi sunuyoruz. Hijyenik ve lüks salon ortamımızda, premium ürün kullanarak saç sağlığınızı ön planda tutuyoruz. Sadece bir kuaför değil, stil danışmanınız olarak yanınızdayız — tarzınızı ve imajınızı birlikte yeniden tanımlayalım.
+                    </p>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <i class="fas fa-award"></i>
+                            <span>Uzman Kadro</span>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-user-check"></i>
+                            <span>Kişiye Özel Stil</span>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Hijyenik Ortam</span>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-gem"></i>
+                            <span>Lüks Atmosfer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
     </section>
 
-
-
-    <!-- Services Section -->
-
-    <section id="services" class="py-20 bg-secondary">
-
-        <div class="container mx-auto px-4">
-
-            <div class="max-w-6xl mx-auto">
-
-                <!-- Section Header -->
-
-                <div class="text-center mb-16 animate-on-scroll">
-
-                    <h2 class="text-4xl md:text-5xl font-bold mb-4 gradient-text">Hizmetlerimiz</h2>
-
-                    <div class="section-divider"></div>
-
-                    <p class="text-softgray text-lg mt-6">Premium saç ve bakım hizmetlerimiz</p>
-
+    <!-- SERVICES SECTION -->
+    <section class="services section" id="hizmetler">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Hizmetlerimiz</h2>
+                <p>Profesyonel saç tasarım ve bakım hizmetlerimizle tanışın</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card reveal">
+                    <div class="service-icon">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h3>Saç Kesim & Stil</h3>
+                    <p>Yüz şeklinize ve tarzınıza uygun, modern ve klasik saç kesimleri. Kişiye özel stil danışmanlığı ile mükemmel sonuçlar.</p>
+                    <span class="service-price">Fiyatlar için sorunuz</span>
                 </div>
-
-
-
-                <!-- Services Grid -->
-
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                    <!-- Service 1 -->
-
-                    <div class="service-card glass rounded-xl p-8 border border-gray-800 animate-on-scroll">
-
-                        <div class="w-14 h-14 bg-gradient-to-br from-gold to-bronze rounded-lg flex items-center justify-center mb-6">
-
-                            <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
-
-                            </svg>
-
-                        </div>
-
-                        <h3 class="text-2xl font-bold text-white mb-3">Saç Kesim & Stil</h3>
-
-                        <p class="text-softgray mb-4">Modern ve klasik tekniklerle, yüz hatlarınıza uygun profesyonel saç kesimi ve stil oluşturma.</p>
-
-                        <div class="flex items-center text-gold">
-
-                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-
-                            </svg>
-
-                            <span class="text-sm">Uzman Stilistler</span>
-
-                        </div>
-
+                <div class="service-card reveal">
+                    <div class="service-icon">
+                        <i class="fas fa-user"></i>
                     </div>
-
-
-
-                    <!-- Service 2 -->
-
-                    <div class="service-card glass rounded-xl p-8 border border-gray-800 animate-on-scroll">
-
-                        <div class="w-14 h-14 bg-gradient-to-br from-gold to-bronze rounded-lg flex items-center justify-center mb-6">
-
-                            <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
-
-                            </svg>
-
-                        </div>
-
-                        <h3 class="text-2xl font-bold text-white mb-3">Sakal Tasarımı</h3>
-
-                        <p class="text-softgray mb-4">Yüz hatlarınıza uygun, profesyonel sakal şekillendirme ve bakım hizmetleri.</p>
-
-                        <div class="flex items-center text-gold">
-
-                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-
-                            </svg>
-
-                            <span class="text-sm">Hassas Şekillendirme</span>
-
-                        </div>
-
+                    <h3>Sakal Tasarımı</h3>
+                    <p>Profesyonel sakal şekillendirme, düzeltme ve bakım hizmetleri. Yüz hatlarınıza uygun ideal sakal modeli.</p>
+                    <span class="service-price">Fiyatlar için sorunuz</span>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
                     </div>
-
-
-
-                    <!-- Service 3 -->
-
-                    <div class="service-card glass rounded-xl p-8 border border-gray-800 animate-on-scroll">
-
-                        <div class="w-14 h-14 bg-gradient-to-br from-gold to-bronze rounded-lg flex items-center justify-center mb-6">
-
-                            <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
-
-                            </svg>
-
-                        </div>
-
-                        <h3 class="text-2xl font-bold text-white mb-3">Saç Renklendirme & Balyaj</h3>
-
-                        <p class="text-softgray mb-4">Profesyonel boya teknikleri ile doğal görünümlü renklendirme ve balyaj uygulamaları.</p>
-
-                        <div class="flex items-center text-gold">
-
-                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-
-                            </svg>
-
-                            <span class="text-sm">Premium Boyalar</span>
-
-                        </div>
-
+                    <h3>Saç Renklendirme & Balyaj</h3>
+                    <p>Doğal ve canlı renk geçişleri, balyaj, röfle ve komple boyama. Saçınıza zarar vermeden profesyonel renklendirme.</p>
+                    <span class="service-price">Fiyatlar için sorunuz</span>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon">
+                        <i class="fas fa-spa"></i>
                     </div>
-
-
-
-                    <!-- Service 4 -->
-
-                    <div class="service-card glass rounded-xl p-8 border border-gray-800 animate-on-scroll">
-
-                        <div class="w-14 h-14 bg-gradient-to-br from-gold to-bronze rounded-lg flex items-center justify-center mb-6">
-
-                            <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-
-                            </svg>
-
-                        </div>
-
-                        <h3 class="text-2xl font-bold text-white mb-3">Keratin & Saç Bakımı</h3>
-
-                        <p class="text-softgray mb-4">Saçlarınıza derinlemesine bakım, keratin tedavisi ve onarıcı bakım programları.</p>
-
-                        <div class="flex items-center text-gold">
-
-                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-
-                            </svg>
-
-                            <span class="text-sm">Doğal Formüller</span>
-
-                        </div>
-
+                    <h3>Keratin & Saç Bakımı</h3>
+                    <p>Keratin tedavisi, derin nemlendirme, saç botox ve onarıcı bakımlar. Sağlıklı ve parlak saçlar için profesyonel çözümler.</p>
+                    <span class="service-price">Fiyatlar için sorunuz</span>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon">
+                        <i class="fas fa-hand-sparkles"></i>
                     </div>
-
-
-
-                    <!-- Service 5 -->
-
-                    <div class="service-card glass rounded-xl p-8 border border-gray-800 animate-on-scroll">
-
-                        <div class="w-14 h-14 bg-gradient-to-br from-gold to-bronze rounded-lg flex items-center justify-center mb-6">
-
-                            <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-
-                            </svg>
-
-                        </div>
-
-                        <h3 class="text-2xl font-bold text-white mb-3">Cilt Bakımı</h3>
-
-                        <p class="text-softgray mb-4">Profesyonel cilt bakımı, yüz temizliği ve rejuvenasyon tedavileri.</p>
-
-                        <div class="flex items-center text-gold">
-
-                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-
-                            </svg>
-
-                            <span class="text-sm">Uzman Bakım</span>
-
-                        </div>
-
+                    <h3>Cilt Bakımı</h3>
+                    <p>Yüz bakımı, peeling, nemlendirme ve anti-aging tedaviler. Cildinize sağlık ve gençlik katacak özel protokoller.</p>
+                    <span class="service-price">Fiyatlar için sorunuz</span>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon">
+                        <i class="fas fa-crown"></i>
                     </div>
+                    <h3>VIP Paketler</h3>
+                    <p>Düğün, nişan ve özel günler için komple bakım paketleri. Saç, sakal ve cilt bakımını tek pakette sunuyoruz.</p>
+                    <span class="service-price">Özel fiyatlandırma</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- HOURS SECTION -->
+    <section class="hours section" id="calisma-saatleri">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Çalışma Saatleri</h2>
+                <p>Sizi salonumuzda ağırlamaktan mutluluk duyarız</p>
+            </div>
+            <div class="hours-wrapper">
+                <div class="hours-info reveal">
+                    <h3>Size Uygun Zamanı Seçin</h3>
+                    <p>
+                        Haftanın 6 günü hizmetinizdeyiz. Pazar günleri randevu sistemi ile çalışıyoruz. 
+                        Yoğunluk yaşamamak için önceden randevu almanızı öneririz.
+                    </p>
+                    <div class="hours-note">
+                        <i class="fas fa-info-circle"></i>
+                        <span>Pazar günleri sadece randevu ile hizmet vermekteyiz. WhatsApp üzerinden randevu alabilirsiniz.</span>
+                    </div>
+                </div>
+                <div class="hours-table reveal" id="hoursTable">
+                    <!-- Generated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- REVIEWS SECTION -->
+    <section class="reviews section" id="yorumlar">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Müşteri Yorumları</h2>
+                <p>Müşterilerimizin bizim hakkımızda söyledikleri</p>
+            </div>
 
-                    <!-- Service 6 -->
+            <!-- Google Rating Card -->
+            <div class="google-rating-card reveal">
+                <div class="google-logo">
+                    <span class="google-logo-text">
+                        <span class="g-blue">G</span><span class="g-red">o</span><span class="g-yellow">o</span><span class="g-blue">g</span><span class="g-green">l</span><span class="g-red">e</span>
+                    </span>
+                </div>
+                <div class="google-rating-number">4.9</div>
+                <div class="google-rating-details">
+                    <div class="google-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="google-reviews-count">150+ Google Yorumu</div>
+                </div>
+            </div>
 
-                    <div class="service-card glass rounded-xl p-8 border border-gray-800 animate-on-scroll">
-
-                        <div class="w-14 h-14 bg-gradient-to-br from-gold to-bronze rounded-lg flex items-center justify-center mb-6">
-
-                            <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
-
-                            </svg>
-
+            <!-- Reviews Grid -->
+            <div class="reviews-grid">
+                <div class="review-card reveal">
+                    <i class="fas fa-quote-right quote-icon"></i>
+                    <div class="review-header">
+                        <div class="review-avatar">AY</div>
+                        <div class="review-author">
+                            <h4>Ahmet Yılmaz</h4>
+                            <span class="review-date">2 hafta önce</span>
                         </div>
-
-                        <h3 class="text-2xl font-bold text-white mb-3">Stil Danışmanlığı</h3>
-
-                        <p class="text-softgray mb-4">Kişiye özel stil danışmanlığı ile size en uygun görünümü birlikte belirleyelim.</p>
-
-                        <div class="flex items-center text-gold">
-
-                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-
-                            </svg>
-
-                            <span class="text-sm">Kişiye Özel</span>
-
+                    </div>
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">
+                        "Bornova'da gittiğim en iyi kuaför! Soner Bey gerçekten işinin ehli. Saç kesiminde gösterdiği özen ve profesyonellik takdire şayan. Salon çok temiz ve modern. Herkese tavsiye ederim."
+                    </p>
+                </div>
+                <div class="review-card reveal">
+                    <i class="fas fa-quote-right quote-icon"></i>
+                    <div class="review-header">
+                        <div class="review-avatar">EK</div>
+                        <div class="review-author">
+                            <h4>Elif Kaya</h4>
+                            <span class="review-date">1 ay önce</span>
                         </div>
+                    </div>
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">
+                        "Balyaj ve saç bakımı için gitmiştim, sonuç muhteşem oldu! Çok ilgili ve profesyonel bir ekip. Saçlarıma hiç zarar vermeden harika bir renk elde ettilar. Kesinlikle tekrar geleceğim."
+                    </p>
+                </div>
+                <div class="review-card reveal">
+                    <i class="fas fa-quote-right quote-icon"></i>
+                    <div class="review-header">
+                        <div class="review-avatar">MD</div>
+                        <div class="review-author">
+                            <h4>Mehmet Demir</h4>
+                            <span class="review-date">3 hafta önce</span>
+                        </div>
+                    </div>
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="review-text">
+                        "Sakal tasarımında gerçekten çok iyiler. Yüz şeklime uygun mükemmel bir sakal modeli önerdiler. Hijyenik ortam ve güler yüzlü hizmet. Fiyat/performans açısından da gayet iyi."
+                    </p>
+                </div>
+                <div class="review-card reveal">
+                    <i class="fas fa-quote-right quote-icon"></i>
+                    <div class="review-header">
+                        <div class="review-avatar">SÖ</div>
+                        <div class="review-author">
+                            <h4>Selin Özkan</h4>
+                            <span class="review-date">1 hafta önce</span>
+                        </div>
+                    </div>
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">
+                        "Düğünüm için özel paket aldım ve sonuçtan inanılmaz memnun kaldım. Saçım, makyajım ve bakımım mükemmeldi. Tüm ekibe çok teşekkür ederim, hayallerimin ötesinde bir sonuç oldu!"
+                    </p>
+                </div>
+            </div>
 
+            <div class="reviews-cta reveal">
+                <a href="https://maps.app.goo.gl/MTVtYtbezu7jjNEb9" target="_blank" rel="noopener" class="btn btn-outline">
+                    <i class="fab fa-google"></i>
+                    Google Maps'te Tüm Yorumları Oku
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCATION SECTION -->
+    <section class="location section" id="konum">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Bizi Ziyaret Edin</h2>
+                <p>Salonumuz sizi bekliyor</p>
+            </div>
+            <div class="location-wrapper">
+                <div class="location-info reveal">
+                    <h3>İletişim & Konum</h3>
+                    <div class="location-address">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="location-address-text">
+                            <h4>Adres</h4>
+                            <p>Kazımdirik, 154. Sk. 6/A,<br>35100 Bornova/İzmir</p>
+                        </div>
+                    </div>
+                    <div class="location-contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <a href="tel:+905XXXXXXXXX">+90 5XX XXX XX XX</a>
+                    </div>
+                    <div class="location-contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <a href="https://wa.me/905XXXXXXXXX" target="_blank" rel="noopener">WhatsApp ile İletişim</a>
+                    </div>
+                    <div class="location-contact-item">
+                        <i class="fab fa-instagram"></i>
+                        <a href="https://www.instagram.com/sonersactasarm/" target="_blank" rel="noopener">@sonersactasarm</a>
+                    </div>
+                    <div class="location-buttons">
+                        <a href="https://maps.app.goo.gl/MTVtYtbezu7jjNEb9" target="_blank" rel="noopener" class="btn btn-gold">
+                            <i class="fas fa-directions"></i>
+                            Yol Tarifi Al
+                        </a>
+                        <a href="https://wa.me/905XXXXXXXXX" target="_blank" rel="noopener" class="btn btn-whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                            Randevu Al
+                        </a>
+                    </div>
+                </div>
+                <div class="map-container reveal">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3125.2849!2d27.2155!3d38.4593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzjCsDI3JzMzLjUiTiAyN8KwMTInNTUuOCJF!5e0!3m2!1str!2str!4v1234567890" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Soner Saç Tasarım Konum">
+                    </iframe>
+                    <div class="map-overlay">
+                        <a href="https://maps.app.goo.gl/MTVtYtbezu7jjNEb9" target="_blank" rel="noopener" class="btn btn-gold" style="font-size: 0.85rem; padding: 10px 24px;">
+                            <i class="fas fa-external-link-alt"></i>
+                            Google Maps'te Aç
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3><span class="gold-text">Soner Saç</span> Tasarım</h3>
+                    <p>Bornova'da premium kuaför ve saç tasarım hizmetleri sunan, müşteri memnuniyetini ön planda tutan lüks bir salon.</p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/sonersactasarm/" target="_blank" rel="noopener" class="instagram" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/905XXXXXXXXX" target="_blank" rel="noopener" class="whatsapp" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://maps.app.goo.gl/MTVtYtbezu7jjNEb9" target="_blank" rel="noopener" aria-label="Google Maps">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Hızlı Bağlantılar</h4>
+                    <a href="#hakkimizda">Hakkımızda</a>
+                    <a href="#hizmetler">Hizmetler</a>
+                    <a href="#calisma-saatleri">Saatler</a>
+                    <a href="#yorumlar">Yorumlar</a>
+                    <a href="#konum">Konum</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Hizmetler</h4>
+                    <a href="#hizmetler">Saç Kesim</a>
+                    <a href="#hizmetler">Sakal Tasarımı</a>
+                    <a href="#hizmetler">Renklendirme</a>
+                    <a href="#hizmetler">Keratin Bakım</a>
+                    <a href="#hizmetler">Cilt Bakımı</a>
+                </div>
+                <div class="footer-col">
+                    <h4>İletişim</h4>
+                    <a href="tel:+905XXXXXXXXX">+90 5XX XXX XX XX</a>
+                    <a href="https://wa.me/905XXXXXXXXX" target="_blank" rel="noopener">WhatsApp</a>
+                    <a href="https://maps.app.goo.gl/MTVtYtbezu7jjNEb9" target="_blank" rel="noopener">Google Maps</a>
+                    <a href="#konum">Bornova, İzmir</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 <a href="#">Soner Saç Tasarım</a>. Tüm hakları saklıdır.</p>
+                <p>Premium kuaför hizmetleri</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Yukarı çık">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- WhatsApp Float Button -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/905XXXXXXXXX" target="_blank" rel="noopener" aria-label="WhatsApp ile ulaşın">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <script>
+        // Loading Screen
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('loadingScreen').classList.add('hidden');
+            }, 1500);
+        });
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        const backToTop = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+
+            if (window.scrollY > 400) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        // Back to Top
+        backToTop.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileOverlay = document.getElementById('mobileOverlay');
+        const mobileMenuClose = document.getElementById('mobileMenuClose');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function openMobileMenu() {
+            mobileMenu.classList.add('active');
+            mobileOverlay.style.display = 'block';
+            setTimeout(() => mobileOverlay.classList.add('active'), 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('active');
+            mobileOverlay.classList.remove('active');
+            setTimeout(() => mobileOverlay.style.display = 'none', 300);
+            document.body.style.overflow = '';
+        }
+
+        mobileMenuBtn.addEventListener('click', openMobileMenu);
+        mobileMenuClose.addEventListener('click', closeMobileMenu);
+        mobileOverlay.addEventListener('click', closeMobileMenu);
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+
+        // Working Hours Table
+        const hoursData = [
+            { day: 'Pazartesi', time: '09:00 - 20:00', isOpen: true },
+            { day: 'Salı', time: '09:00 - 20:00', isOpen: true },
+            { day: 'Çarşamba', time: '09:00 - 20:00', isOpen: true },
+            { day: 'Perşembe', time: '09:00 - 20:00', isOpen: true },
+            { day: 'Cuma', time: '09:00 - 20:00', isOpen: true },
+            { day: 'Cumartesi', time: '09:00 - 20:00', isOpen: true },
+            { day: 'Pazar', time: 'Randevulu', isOpen: false }
+        ];
+
+        const today = new Date().getDay();
+        const dayIndex = today === 0 ? 6 : today - 1;
+
+        const hoursTable = document.getElementById('hoursTable');
+        hoursData.forEach((item, index) => {
+            const row = document.createElement('div');
+            row.className = 'hours-row' + (index === dayIndex ? ' today' : '');
+            row.innerHTML = `
+                <span class="hours-day">
+                    ${item.day}
+                    ${index === dayIndex ? '<span class="today-badge">Bugün</span>' : ''}
+                </span>
+                <span class="hours-time ${item.isOpen ? 'open' : 'closed'}">
+                    ${item.time}
+                    ${!item.isOpen ? ' <i class="fas fa-calendar-check" style="margin-left:4px;"></i>' : ''}
+                </span>
+            `;
+            hoursTable.appendChild(row);
+        });
+
+        // Particles
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 30; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDuration = (Math.random() * 8 + 6) + 's';
+            particle.style.animationDelay = Math.random() * 5 + 's';
+            particle.style.width = (Math.random() * 3 + 1) + 'px';
+            particle.style.height = particle.style.width;
+            particlesContainer.appendChild(particle);
+        }
+
+        // Scroll Reveal
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        revealElements.forEach(el => {
+            revealObserver.observe(el);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Counter Animation for Badge
+        const counterBadge = document.querySelector('.about-image-badge .number');
+        if (counterBadge) {
+            let counted = false;
+            const counterObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !counted) {
+                        counted = true;
+                        let target = parseInt(counterBadge.textContent);
+                        let current = 0;
+                        const increment = target / 40;
+                        const timer = setInterval(() => {
+                            current += increment;
+                            if (current >= target) {
+                                counterBadge.textContent = target + '+';
+                                clearInterval(timer);
+                            } else {
+                                counterBadge.textContent = Math.floor(current) + '+';
+                            }
+                        }, 50);
+                    }
+                });
+            }, { threshold: 0.5 });
+            counterObserver.observe(counterBadge);
+        }
+    </script>
+</body>
+</html>
